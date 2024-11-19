@@ -30,11 +30,15 @@ def main():
         # 运行分析
         analysis_results = system.run_analysis(start_date, end_date)
         
-        # 初始化供需分析图表生成器
-        supply_demand_chart_generator = SupplyDemandChartGenerator(theme='plotly_white')
-        
         # 获取处理后的数据
         processed_data = system.data_processor.get_processed_data()
+        
+        # 添加工作日分析 - 修改这里，传入 logger
+        workday_analyzer = WorkdayAnalyzer(processed_data, logger)  # 添加 logger 参数
+        workday_analyzer.analyze_workday_patterns()
+        
+        # 初始化供需分析图表生成器
+        supply_demand_chart_generator = SupplyDemandChartGenerator(theme='plotly_white')
         
         # 生成供需分析图表
         supply_demand_chart_generator.generate_supply_demand_analysis(processed_data)
@@ -47,8 +51,6 @@ def main():
         pdf_exporter = PDFExporter()
         html_content = pdf_exporter._dataframe_to_html(processed_data, "分析报告")
         pdf_exporter.export_to_pdf(html_content, "分析报告", "analysis_report")
-        
-
         
     except Exception as e:
         logger.error(f"程序运行出错: {str(e)}", exc_info=True)
