@@ -1,0 +1,191 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>电力价格分析导航</title>
+            <meta charset="utf-8">
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 20px;
+                    background-color: #f5f5f5;
+                }
+                .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+                .header {
+                    text-align: center;
+                    margin-bottom: 30px;
+                    padding: 20px;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                }
+                .module-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 20px;
+                    margin-bottom: 30px;
+                }
+                .module-card {
+                    background-color: #fff;
+                    border-radius: 10px;
+                    padding: 20px;
+                    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                    transition: transform 0.3s ease;
+                }
+                .module-card:hover {
+                    transform: translateY(-5px);
+                }
+                .module-icon {
+                    font-size: 2em;
+                    margin-bottom: 10px;
+                }
+                .module-title {
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                    color: #333;
+                }
+                .module-description {
+                    color: #666;
+                    margin-bottom: 15px;
+                }
+                .chart-list {
+                    list-style: none;
+                    padding: 0;
+                }
+                .chart-link {
+                    display: block;
+                    padding: 8px 0;
+                    color: #007bff;
+                    text-decoration: none;
+                }
+                .chart-link:hover {
+                    color: #0056b3;
+                }
+                .timestamp {
+                    text-align: center;
+                    color: #666;
+                    margin-top: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <h1>电力价格分析导航</h1>
+                    <p>选择以下模块查看详细分析结果</p>
+                </div>
+                <div class="module-grid">
+                    
+                    <div class="module-card">
+                        <div class="module-icon">💰</div>
+                        <div class="module-title">价格分析</div>
+                        <div class="module-description">价格趋势、波动性和分布特征分析</div>
+                        <ul class="chart-list">
+                            <li><a href="./price_analysis\price_distribution.html" class="chart-link" target="_blank">price_distribution</a></li>
+<li><a href="./price_analysis\price_trend.html" class="chart-link" target="_blank">price_trend</a></li>
+<li><a href="./price_analysis\price_trend_analysis.html" class="chart-link" target="_blank">price_trend_analysis</a></li>
+<li><a href="./price_analysis\price_volatility.html" class="chart-link" target="_blank">price_volatility</a></li>
+                        </ul>
+                    </div>
+                
+
+                    <div class="module-card">
+                        <div class="module-icon">⏰</div>
+                        <div class="module-title">时间模式</div>
+                        <div class="module-description">日内、周内、月度和季节性价格模式</div>
+                        <ul class="chart-list">
+                            <li><a href="./time_patterns\daily_pattern.html" class="chart-link" target="_blank">daily_pattern</a></li>
+<li><a href="./time_patterns\intraday_pattern.html" class="chart-link" target="_blank">intraday_pattern</a></li>
+<li><a href="./time_patterns\seasonal_pattern.html" class="chart-link" target="_blank">seasonal_pattern</a></li>
+<li><a href="./time_patterns\time_patterns.html" class="chart-link" target="_blank">time_patterns</a></li>
+<li><a href="./time_patterns\weekly_pattern.html" class="chart-link" target="_blank">weekly_pattern</a></li>
+<li><a href="./time_patterns\workday_comparison.html" class="chart-link" target="_blank">workday_comparison</a></li>
+                        </ul>
+                    </div>
+                
+
+                    <div class="module-card">
+                        <div class="module-icon">📊</div>
+                        <div class="module-title">特征分析</div>
+                        <div class="module-description">价格影响因素特征分析</div>
+                        <ul class="chart-list">
+                            <li><a href="./features\feature_analysis.html" class="chart-link" target="_blank">feature_analysis</a></li>
+<li><a href="./features\feature_correlation.html" class="chart-link" target="_blank">feature_correlation</a></li>
+<li><a href="./features\hourly_price_distribution.html" class="chart-link" target="_blank">hourly_price_distribution</a></li>
+                        </ul>
+                    </div>
+                
+
+                    <div class="module-card">
+                        <div class="module-icon">📈</div>
+                        <div class="module-title">回归分析</div>
+                        <div class="module-description">价格影响因素的回归分析结果</div>
+                        <ul class="chart-list">
+                            <li><a href="./regression_analysis\feature_importance.html" class="chart-link" target="_blank">feature_importance</a></li>
+<li><a href="./regression_analysis\price_factors_regression.html" class="chart-link" target="_blank">price_factors_regression</a></li>
+<li><a href="./regression_analysis\regression_diagnostics.html" class="chart-link" target="_blank">regression_diagnostics</a></li>
+                        </ul>
+                    </div>
+                
+
+                    <div class="module-card">
+                        <div class="module-icon">⚖️</div>
+                        <div class="module-title">供需分析</div>
+                        <div class="module-description">供需关系对价格的影响分析</div>
+                        <ul class="chart-list">
+                            <li><a href="./supply_demand\price_elasticity.html" class="chart-link" target="_blank">price_elasticity</a></li>
+<li><a href="./supply_demand\supply_demand_balance.html" class="chart-link" target="_blank">supply_demand_balance</a></li>
+<li><a href="./supply_demand\supply_demand_dashboard.html" class="chart-link" target="_blank">supply_demand_dashboard</a></li>
+<li><a href="./supply_demand\supply_demand_impact.html" class="chart-link" target="_blank">supply_demand_impact</a></li>
+                        </ul>
+                    </div>
+                
+
+                    <div class="module-card">
+                        <div class="module-icon">📅</div>
+                        <div class="module-title">工作日分析</div>
+                        <div class="module-description">工作日与工作日价格特征对比</div>
+                        <ul class="chart-list">
+                            <li><a href="./workday_analysis\holiday_effect.html" class="chart-link" target="_blank">holiday_effect</a></li>
+<li><a href="./workday_analysis\workday_analysis.html" class="chart-link" target="_blank">workday_analysis</a></li>
+<li><a href="./workday_analysis\workday_comparison.html" class="chart-link" target="_blank">workday_comparison</a></li>
+<li><a href="./workday_analysis\workday_pattern.html" class="chart-link" target="_blank">workday_pattern</a></li>
+                        </ul>
+                    </div>
+                
+
+                    <div class="module-card">
+                        <div class="module-icon">🌊</div>
+                        <div class="module-title">峰谷分析</div>
+                        <div class="module-description">电价峰谷特征和转换规律分析</div>
+                        <ul class="chart-list">
+                            <li><a href="./peak_valley\peak_valley_analysis.html" class="chart-link" target="_blank">peak_valley_analysis</a></li>
+<li><a href="./peak_valley\peak_valley_distribution.html" class="chart-link" target="_blank">peak_valley_distribution</a></li>
+<li><a href="./peak_valley\peak_valley_pattern.html" class="chart-link" target="_blank">peak_valley_pattern</a></li>
+<li><a href="./peak_valley\price_transition.html" class="chart-link" target="_blank">price_transition</a></li>
+                        </ul>
+                    </div>
+                
+
+                    <div class="module-card">
+                        <div class="module-icon">🔮</div>
+                        <div class="module-title">预测分析</div>
+                        <div class="module-description">价格预测模型和结果分析</div>
+                        <ul class="chart-list">
+                            <li><a href="./predictions\prediction_analysis.html" class="chart-link" target="_blank">prediction_analysis</a></li>
+                        </ul>
+                    </div>
+                
+                </div>
+                <div class="timestamp">
+                    生成时间: 2024-11-19 10:41:00
+                </div>
+            </div>
+        </body>
+        </html>
+        
