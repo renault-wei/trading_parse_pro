@@ -1,0 +1,203 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>工作日vs非工作日分析报告</title>
+            <meta charset="utf-8">
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 20px;
+                    background-color: #f5f5f5;
+                }
+                .container {
+                    max-width: 1800px;
+                    margin: 0 auto;
+                    background-color: white;
+                    padding: 20px;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                }
+                .section {
+                    margin-bottom: 30px;
+                }
+                .chart-container {
+                    margin-bottom: 20px;
+                    border: 1px solid #ddd;
+                    padding: 15px;
+                    border-radius: 5px;
+                }
+                .header {
+                    text-align: center;
+                    margin-bottom: 30px;
+                    padding: 20px;
+                    background-color: #f8f9fa;
+                    border-radius: 5px;
+                }
+                iframe {
+                    width: 100%;
+                    height: 600px;
+                    border: none;
+                }
+                .analysis-conclusions {
+                    padding: 20px;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    margin-top: 20px;
+                }
+                .finding-section {
+                    margin-bottom: 20px;
+                    padding: 15px;
+                    background-color: #f8f9fa;
+                    border-radius: 5px;
+                }
+                pre {
+                    white-space: pre-wrap;
+                    font-family: Arial, sans-serif;
+                    margin: 10px 0;
+                    padding: 10px;
+                    background-color: #fff;
+                    border-radius: 3px;
+                }
+                .trading-advice {
+                    margin-top: 20px;
+                    padding: 15px;
+                    background-color: #e9ecef;
+                    border-radius: 5px;
+                }
+                ul {
+                    padding-left: 20px;
+                }
+                li {
+                    margin-bottom: 10px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <h1>工作日vs非工作日分析报告</h1>
+                    <p>生成时间: 2024-11-20 15:28:46</p>
+                </div>
+                
+                <div class="section">
+                    <h2>1. 价格走势分析</h2>
+                    <div class="chart-container">
+                        <iframe src="price_comparison.html"></iframe>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>2. 时段特征分析</h2>
+                    <div class="chart-container">
+                        <iframe src="period_heatmap.html"></iframe>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>3. 统计指标分析</h2>
+                    <div class="chart-container">
+                        <iframe src="statistical_analysis.html"></iframe>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>4. 分析结论</h2>
+                    <div class="analysis-conclusions">
+                        
+        <div class="finding-section">
+            <h3>主要发现</h3>
+            <div class="finding-item">
+                <h4>工作日与非工作日价格差异特征</h4>
+                <pre>
+            价格差异特征分析：
+            1. 整体价格水平比较：
+               - 工作日平均价格: 282.64
+               - 非工作日平均价格: 290.11
+               - 价格差异: -2.58%
+               
+            2. 峰时段(17:00-21:00)价格比较：
+               - 工作日: 425.68
+               - 非工作日: 431.04
+               - 差异: -1.24%
+               
+            3. 谷时段(11:00-15:00)价格比较：
+               - 工作日: 109.07
+               - 非工作日: 129.73
+               - 差异: -15.93%
+            </pre>
+            </div>
+            
+            <div class="finding-item">
+                <h4>时段切换特征分析</h4>
+                <pre>时段切换特征分析：
+
+                早高峰开始(6->8):
+                - 工作日：平均变化 -147.81 (标准差: 193.30)
+                - 非工作日：平均变化 -136.08 (标准差: 180.96)
+                - 差异显著性：low
+                
+
+                早高峰结束(12->14):
+                - 工作日：平均变化 +58.91 (标准差: 105.30)
+                - 非工作日：平均变化 +78.90 (标准差: 138.57)
+                - 差异显著性：low
+                
+
+                晚高峰开始(16->18):
+                - 工作日：平均变化 +81.54 (标准差: 129.31)
+                - 非工作日：平均变化 +78.63 (标准差: 115.30)
+                - 差异显著性：low
+                
+
+                晚高峰结束(21->23):
+                - 工作日：平均变化 -21.81 (标准差: 94.62)
+                - 非工作日：平均变化 -7.69 (标准差: 85.32)
+                - 差异显著性：low
+                </pre>
+            </div>
+            
+            <div class="finding-item">
+                <h4>波动率特征分析</h4>
+                <pre>波动率特征分析：
+
+                早高峰(8-12):
+                - 工作日波动率: 29778.15%
+                - 非工作日波动率: 41903.22%
+                - 波动率差异: 12125.07%
+                
+
+                午谷期(12-16):
+                - 工作日波动率: 95968.32%
+                - 非工作日波动率: 2992.60%
+                - 波动率差异: 92975.72%
+                
+
+                晚高峰(16-20):
+                - 工作日波动率: 5886.84%
+                - 非工作日波动率: 19723.61%
+                - 波动率差异: 13836.76%
+                
+
+                夜间期(20-24):
+                - 工作日波动率: 8973.22%
+                - 非工作日波动率: 599.18%
+                - 波动率差异: 8374.05%
+                </pre>
+            </div>
+        </div>
+        
+        <div class="trading-advice">
+            <h3>交易建议</h3>
+            <ul>
+                <li><strong>重点关注时段：</strong>工作日早晚高峰时段的价格跳跃机会，以及非工作日的低波动时段</li>
+                <li><strong>风险控制建议：</strong>高波动时段采用更严格的止损策略，时段切换时注意控制持仓规模</li>
+                <li><strong>策略优化方向：</strong>根据工作日和非工作日的特征分别制定交易策略，重点关注时段切换机会</li>
+            </ul>
+        </div>
+        
+                    </div>
+                </div>
+            </div>
+        </body>
+        </html>
+        

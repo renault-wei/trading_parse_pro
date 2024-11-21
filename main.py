@@ -33,9 +33,9 @@ def main():
         # 获取处理后的数据
         processed_data = system.data_processor.get_processed_data()
         
-        # 添加工作日分析 - 修改这里，传入 logger
+        # 添加工作日分析 - 修改这里，传入 logger 和 processed_data
         workday_analyzer = WorkdayAnalyzer(processed_data, logger)  # 添加 logger 参数
-        workday_analyzer.analyze_workday_patterns()
+        workday_analyzer.generate_workday_analysis(processed_data)  # 传入 processed_data
         
         # 初始化供需分析图表生成器
         supply_demand_chart_generator = SupplyDemandChartGenerator(theme='plotly_white')

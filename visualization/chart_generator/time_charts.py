@@ -90,6 +90,8 @@ class TimeChartGenerator(BaseChartGenerator):
             output_path = Path(self.output_dirs['time_patterns']) / 'time_patterns.html'
             fig.write_html(str(output_path))
             
+            # 生成季节报表 
+            self.generate_season_period_table()
             return str(output_path)
             
         except Exception as e:
@@ -105,7 +107,7 @@ class TimeChartGenerator(BaseChartGenerator):
             # 定义24小时段
             hours = [f"{str(i).zfill(2)}:00-{str(i+1).zfill(2)}:00" for i in range(24)]
             
-            # 定义���段类型及其对应的颜色
+            # 定义字段类型及其对应的颜色
             period_colors = {
                 '尖峰': '#FF4500',  # 深橙色
                 '峰': '#FFB6C1',    # 浅粉色

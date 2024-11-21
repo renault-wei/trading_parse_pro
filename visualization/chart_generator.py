@@ -69,6 +69,7 @@ class ChartGenerator:
         """生成价格分析图表"""
         if self._data is None:
             raise ValueError("数据未设置")
+        self.price_charts.generate_price_distribution(self._data)
         return self.price_charts.generate_price_trend_analysis(self._data)
         
     def _generate_time_patterns(self, output_dir: str) -> Dict[str, str]:

@@ -111,6 +111,9 @@ class PriceChartGenerator(BaseChartGenerator):
                     'modeBarButtonsToRemove': ['hoverClosestCartesian', 'hoverCompareCartesian']
                 }
             )
+
+            # 生成分布表
+            self.generate_price_distribution(data)
             
             return str(output_path)
             

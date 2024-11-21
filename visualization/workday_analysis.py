@@ -20,9 +20,11 @@ class WorkdayAnalyzer:
         try:
             self.logger.info("开始生成工作日分析报告...")
             
-            # 创建输出目录
-            workday_dir = self.output_dir / 'workday_analysis'
-            workday_dir.mkdir(exist_ok=True)
+            # 确定输出目录
+            output_dir = Path('trading_system/output/workday_analysis')
+            
+            # 创建目录（如果不存在）
+            output_dir.mkdir(parents=True, exist_ok=True)
             
             # 处理数据类型
             self.logger.info("处理数据类型标记...")
@@ -32,13 +34,13 @@ class WorkdayAnalyzer:
             
             # 生成各个分析图表
             self.logger.info("生成价格对比分析...")
-            self._generate_price_comparison(data, workday_dir)
+            self._generate_price_comparison(data, output_dir)
             
             self.logger.info("生成时段热力图...")
-            self._generate_period_heatmap(data, workday_dir)
+            self._generate_period_heatmap(data, output_dir)
             
             self.logger.info("生成统计分析...")
-            self._generate_statistical_analysis(data, workday_dir)
+            self._generate_statistical_analysis(data, output_dir)
             
             # 生成分析结论
             self.logger.info("生成分析结论...")
@@ -56,11 +58,11 @@ class WorkdayAnalyzer:
             html_content = self._update_html_conclusions(html_content, conclusions)
             
             # 保存报告
-            output_path = workday_dir / 'workday_analysis_report.html'
+            output_path = output_dir / 'workday_analysis_report.html'
             with open(output_path, 'w', encoding='utf-8') as f:
                 f.write(html_content)
                 
-            self.logger.info(f"工作日分析报告已生成: {workday_dir}")
+            self.logger.info(f"工作日分析报告已生成: {output_dir}")
             
         except Exception as e:
             self.logger.error(f"生成工作日分析报告时出错: {str(e)}")
