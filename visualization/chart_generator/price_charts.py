@@ -3,7 +3,7 @@ from plotly.subplots import make_subplots
 import pandas as pd
 from pathlib import Path
 from .base import BaseChartGenerator
-
+import numpy as np
 class PriceChartGenerator(BaseChartGenerator):
     """价格相关图表生成器"""
     

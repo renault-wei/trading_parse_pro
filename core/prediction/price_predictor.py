@@ -4,6 +4,11 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from utils.logger import Logger
+from lightgbm import LGBMRegressor
+from xgboost import XGBRegressor
+from catboost import CatBoostRegressor
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense
 
 class ElectricityPricePredictor:
     """电力价格预测系统"""
@@ -22,7 +27,27 @@ class ElectricityPricePredictor:
         )
         self.scaler = StandardScaler()
         self.feature_names = None
+        self.models = {
+            'lgb': LGBMRegressor(),
+            'xgb': XGBRegressor(),
+            'catboost': CatBoostRegressor(),
+            'lstm': self._build_lstm_model(),
+            'transformer': self._build_transformer_model()
+        }
         
+    def _build_lstm_model(self):
+        model = Sequential([
+            LSTM(units=64, return_sequences=True),
+            LSTM(units=32),
+            Dense(units=16),
+            Dense(units=1)
+        ])
+        return model
+        
+    def _build_transformer_model(self):
+        # 添加Transformer模型架构
+        pass
+    
     def prepare_features(self, data):
         """增强特征工程"""
         self.logger.info("准备特征...")
